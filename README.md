@@ -40,16 +40,20 @@ Tarevo debe crecer con disciplina de costos. La arquitectura debe estar preparad
 13-Legal/
 ```
 
-## Documentos iniciales
+## Documentos principales
 
-- `00-Constitution/Atlas-Constitution.md` (pendiente de renombrar a `Tarevo-Constitution.md`)
+- `00-Constitution/Tarevo-Constitution.md`
 - `01-Product/Product-Vision.md`
+- `01-Product/Module-Scope-V1.md`
+- `02-Business/PRD-General-Chile.md`
 - `03-Architecture/Architecture-Principles.md`
 - `04-Infrastructure/INF-001-Produccion.md`
+- `05-Database/Conceptual-Data-Model.md`
 - `06-Security/SEC-001-Security-Architecture.md`
 - `08-ADL/ADL.md`
 - `09-Journal/2026-07-09.md`
 - `10-Backlog/V1-Initial-Backlog.md`
+- `10-Backlog/Codex-Implementation-Prompts.md`
 - `11-Roadmap/Roadmap.md`
 - `12-Brand/Brand-Foundation.md`
 
@@ -60,11 +64,12 @@ Codex nunca debe recibir una instruccion generica como "haz Tarevo".
 Debe recibir tareas cerradas, por ejemplo:
 
 ```text
-Lee Tarevo Constitution, ADL, INF-001 y SEC-001.
+Lee Tarevo Constitution, ADL, INF-001, SEC-001, PRD-General-Chile y Module-Scope-V1.
 Implementa solamente el modulo de autenticacion segura.
 No hardcodees secretos.
 No hagas una version demo.
 Respeta la arquitectura multiempresa y los permisos.
+Documenta cualquier decision tecnica nueva en ADL antes de implementarla.
 ```
 
 ## Principio operativo
