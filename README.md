@@ -1,20 +1,25 @@
-# Atlas Documentation
+# Tarevo Documentation
 
-Repositorio oficial de documentacion de Atlas.
+Repositorio oficial de documentacion de Tarevo.
 
-Atlas es una plataforma SaaS de gestion comercial para PYMEs, enfocada inicialmente en Chile, con arquitectura preparada para crecer hacia otros paises.
+Tarevo es una plataforma SaaS de gestion comercial para PYMEs, enfocada inicialmente en Chile, con arquitectura preparada para crecer hacia otros paises.
 
 ## Estado del proyecto
 
-- Producto: Atlas
-- Nombre tecnico: Atlas Platform
+- Producto: Tarevo
+- Nombre tecnico: Tarevo Platform
+- Dominio objetivo: `gettarevo.com`
 - Mercado inicial: Chile
-- Estado: Sprint 0 - Documentacion y arquitectura
-- Codigo fuente futuro: `atlas-platform`
+- Estado: Sprint 0 - Documentacion, marca, arquitectura e infraestructura
+- Codigo fuente futuro: `tarevo-platform`
 
 ## Regla principal
 
 Ninguna linea de codigo debe desarrollarse sin una decision documentada o un PRD asociado.
+
+## Principio financiero
+
+Tarevo debe crecer con disciplina de costos. La arquitectura debe estar preparada para escalar, pero no se deben contratar servicios pagos, integraciones complejas o suscripciones externas antes de que exista una necesidad real o clientes que justifiquen el gasto.
 
 ## Estructura
 
@@ -37,7 +42,7 @@ Ninguna linea de codigo debe desarrollarse sin una decision documentada o un PRD
 
 ## Documentos iniciales
 
-- `00-Constitution/Atlas-Constitution.md`
+- `00-Constitution/Atlas-Constitution.md` (pendiente de renombrar a `Tarevo-Constitution.md`)
 - `01-Product/Product-Vision.md`
 - `03-Architecture/Architecture-Principles.md`
 - `04-Infrastructure/INF-001-Produccion.md`
@@ -46,15 +51,16 @@ Ninguna linea de codigo debe desarrollarse sin una decision documentada o un PRD
 - `09-Journal/2026-07-09.md`
 - `10-Backlog/V1-Initial-Backlog.md`
 - `11-Roadmap/Roadmap.md`
+- `12-Brand/Brand-Foundation.md`
 
 ## Como debe trabajar Codex
 
-Codex nunca debe recibir una instruccion generica como "haz Atlas".
+Codex nunca debe recibir una instruccion generica como "haz Tarevo".
 
 Debe recibir tareas cerradas, por ejemplo:
 
 ```text
-Lee Atlas Constitution, ADL, INF-001 y SEC-001.
+Lee Tarevo Constitution, ADL, INF-001 y SEC-001.
 Implementa solamente el modulo de autenticacion segura.
 No hardcodees secretos.
 No hagas una version demo.
