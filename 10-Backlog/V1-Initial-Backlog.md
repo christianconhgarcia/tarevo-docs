@@ -1,10 +1,10 @@
-# Atlas V1 - Initial Backlog
+# Tarevo V1 - Initial Backlog
 
 Documento: BACKLOG-001  
-Version: 1.0  
+Version: 1.1  
 Estado: Draft
 
-## Epic 1 - Atlas Core
+## Epic 1 - Tarevo Core
 
 ### CORE-001 - Multiempresa
 
@@ -17,14 +17,27 @@ Criterios:
 - Subdominio asociado.
 - Estado de empresa.
 - Plan asociado.
+- Aislamiento estricto por `tenant_id` o equivalente.
 
 ### CORE-002 - Usuarios y roles
 
 Como administrador de empresa, quiero crear usuarios y asignar permisos.
 
+Criterios:
+
+- Roles iniciales: Owner, Admin, Vendedor, Bodeguero, Cajero, Supervisor.
+- Permisos desacoplados del nombre del rol.
+- Un usuario puede pertenecer a una o mas empresas si el modelo futuro lo requiere.
+
 ### CORE-003 - Entitlements
 
 Como plataforma, quiero activar o bloquear funciones segun plan.
+
+Criterios:
+
+- Apps activables por plan.
+- Limites por usuarios, sucursales, bodegas, cajas, DTE y almacenamiento.
+- Bloqueo elegante cuando se excede el plan.
 
 ## Epic 2 - Auth y seguridad
 
@@ -38,7 +51,7 @@ Login con rate limiting, sesiones seguras y auditoria.
 
 ### AUTH-003 - Recuperacion de contrasena
 
-Token de un solo uso enviado por Resend.
+Token de un solo uso enviado por correo transaccional.
 
 ## Epic 3 - Billing y planes
 
@@ -62,7 +75,7 @@ Vendedor crea ticket interno no tributario.
 
 ### POS-002 - Ciclo de vida del ticket
 
-Estados: creado, pendiente, pagado, anulado, expirado, con boleta, con factura, finalizado.
+Estados: creado, pendiente, pagado, anulado, expirado, con_boleta, con_factura, finalizado.
 
 ### POS-003 - Caja central
 
@@ -146,6 +159,6 @@ Proyecto preparado para Docker y Coolify.
 
 Subida de archivos a R2 y calculo de uso por empresa.
 
-### INF-003 - Resend
+### INF-003 - Correos transaccionales
 
-Correos transaccionales.
+Correos para registro, recuperacion de contrasena, invitaciones, alertas y billing.
