@@ -1,30 +1,33 @@
-# Product Vision - Atlas
+# Product Vision - Tarevo
 
 Documento: PRD-001  
-Version: 1.0  
+Version: 1.1  
 Estado: Draft aprobado para Sprint 0  
 Fecha: 2026-07-09
 
-## 1. Que es Atlas
+## 1. Que es Tarevo
 
-Atlas es una plataforma SaaS para administrar negocios. Combina POS, inventario, bodega, caja, clientes, proveedores, reportes, suscripciones, catalogo web y facturacion electronica para PYMEs.
+Tarevo es una plataforma SaaS para administrar negocios. Combina POS, inventario, bodega, caja, clientes, proveedores, reportes, suscripciones, catalogo web y facturacion electronica para PYMEs.
 
-Atlas nace enfocado en Chile, pero su nucleo no sera chileno. El nucleo sera internacional y el modulo tributario inicial sera Chile/SII.
+Tarevo nace enfocado en Chile, pero su nucleo no sera chileno. El nucleo sera internacional y el modulo tributario inicial sera Chile/SII.
 
-## 2. Que NO es Atlas
+## 2. Que NO es Tarevo
 
-Atlas no es:
+Tarevo no es:
 
 - Solo un sistema de facturacion.
 - Solo un POS.
 - Un software contable completo.
 - Un sistema instalado por cliente.
 - Una coleccion de modulos desconectados.
-- Una app improvisada para Hostinger u otro hosting compartido.
+- Una app improvisada para hosting compartido.
+- Una version demo sin seguridad real.
 
 ## 3. Problema que resuelve
 
-Muchas PYMEs trabajan con Excel, POS antiguos, sistemas separados, inventarios duplicados y poca trazabilidad. Atlas unifica la operacion diaria en una plataforma moderna y segura.
+Muchas PYMEs trabajan con Excel, POS antiguos, sistemas separados, inventarios duplicados y poca trazabilidad. Tarevo unifica la operacion diaria en una plataforma moderna, segura y preparada para crecer.
+
+El problema central no es solo vender. El problema es controlar el negocio completo: quien vendio, cuanto se cobro, que medio de pago se uso, que stock quedo, donde esta el producto, que documento tributario corresponde emitir y que usuario hizo cada accion.
 
 ## 4. Mercado inicial
 
@@ -45,7 +48,7 @@ Segmentos iniciales:
 
 ## 5. Propuesta de valor
 
-Atlas permite que una empresa administre su negocio desde una sola plataforma:
+Tarevo permite que una empresa administre su negocio desde una sola plataforma:
 
 - Vender en POS.
 - Gestionar tickets, pagos y caja.
@@ -55,13 +58,13 @@ Atlas permite que una empresa administre su negocio desde una sola plataforma:
 - Ver reportes.
 - Administrar clientes y proveedores.
 - Activar Apps segun el plan.
-- Operar con subdominio propio dentro de Atlas.
+- Operar con subdominio propio dentro de Tarevo.
 
 ## 6. V1 aprobada
 
 La V1 incluye:
 
-### Atlas Core
+### Tarevo Core
 
 - Multiempresa.
 - Multiusuario.
@@ -72,7 +75,7 @@ La V1 incluye:
 - Suscripciones y planes.
 - Seguridad y auditoria.
 
-### Atlas POS
+### Tarevo POS
 
 - Ventas.
 - Tickets internos.
@@ -85,7 +88,7 @@ La V1 incluye:
 - Medios de pago.
 - Reporte de pagos.
 
-### Atlas Inventory
+### Tarevo Inventory
 
 - Productos.
 - Categorias.
@@ -95,7 +98,7 @@ La V1 incluye:
 - Costos.
 - Ajustes.
 
-### Atlas Warehouse
+### Tarevo Warehouse
 
 - Multiples bodegas por empresa.
 - Ubicaciones.
@@ -104,7 +107,7 @@ La V1 incluye:
 - Picking basico.
 - Recepcion.
 
-### Atlas DTE Chile
+### Tarevo DTE Chile
 
 - Boletas.
 - Facturas.
@@ -144,7 +147,7 @@ Estas ideas quedan documentadas para roadmap futuro.
 
 ## 8. Modelo operativo ideal
 
-Atlas debe ser self-service:
+Tarevo debe ser self-service:
 
 1. Cliente ve publicidad.
 2. Entra a la landing.
@@ -152,8 +155,8 @@ Atlas debe ser self-service:
 4. Crea cuenta.
 5. Escoge subdominio.
 6. Paga.
-7. Atlas crea la empresa.
-8. Atlas activa Apps, limites y permisos.
+7. Tarevo crea la empresa.
+8. Tarevo activa Apps, limites y permisos.
 9. Cliente inicia onboarding.
 10. Cliente empieza a vender.
 
@@ -163,7 +166,7 @@ Atlas debe ser self-service:
 - Estaciones de venta configurables.
 - Caja central.
 - Ciclo de vida completo del ticket.
-- Atlas Warehouse como App premium.
+- Tarevo Warehouse como App premium.
 - Almacenamiento por plan.
 - Subdominios automaticos.
 - SuperAdmin robusto.
