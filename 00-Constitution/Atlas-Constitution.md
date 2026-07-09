@@ -1,26 +1,28 @@
-# Atlas Constitution
+# Tarevo Constitution
 
-Documento: ATLAS-CONSTITUTION-001  
-Version: 1.0  
+Documento: TAREVO-CONSTITUTION-001  
+Version: 1.1  
 Estado: Draft aprobado para Sprint 0  
 Fecha: 2026-07-09  
 Owner: Chris  
 
 ## 1. Proposito
 
-Este documento define los principios que guian Atlas. Toda decision de producto, arquitectura, seguridad, infraestructura, diseno y desarrollo debe respetar esta Constitucion.
+Este documento define los principios que guian Tarevo. Toda decision de producto, arquitectura, seguridad, infraestructura, diseno, finanzas y desarrollo debe respetar esta Constitucion.
 
 Si una nueva funcionalidad contradice este documento, debe replantearse antes de entrar al backlog.
 
 ## 2. Identidad
 
-- Nombre comercial: Atlas
-- Nombre tecnico: Atlas Platform
+- Nombre comercial: Tarevo
+- Nombre tecnico: Tarevo Platform
+- Dominio objetivo: gettarevo.com
 - Producto: plataforma SaaS de gestion comercial
 - Mercado inicial: Chile
 - Vision futura: Latinoamerica
+- IA futura: Menora
 
-Atlas no se presentara principalmente como un ERP tradicional. Comercialmente sera: la plataforma para administrar un negocio.
+Tarevo no se presentara principalmente como un ERP tradicional. Comercialmente sera: la plataforma para administrar un negocio.
 
 ## 3. Mision
 
@@ -32,9 +34,9 @@ Convertirse en una plataforma de gestion comercial lider para PYMEs en Latinoame
 
 ## 5. Principios inmutables
 
-### 5.1 Atlas siempre sera SaaS
+### 5.1 Tarevo siempre sera SaaS
 
-Atlas se construira como plataforma cloud. No habra instalaciones por cliente ni versiones separadas del producto.
+Tarevo se construira como plataforma cloud. No habra instalaciones por cliente ni versiones separadas del producto.
 
 Implicaciones:
 
@@ -42,13 +44,13 @@ Implicaciones:
 - Planes y permisos controlan funcionalidades.
 - Las empresas comparten plataforma, pero no datos.
 
-### 5.2 Atlas sera self-service
+### 5.2 Tarevo sera self-service
 
-El cliente debe poder registrarse, pagar, crear su empresa, escoger subdominio, configurar su cuenta y empezar a usar Atlas sin intervencion manual del equipo.
+El cliente debe poder registrarse, pagar, crear su empresa, escoger subdominio, configurar su cuenta y empezar a usar Tarevo sin intervencion manual del equipo.
 
 ### 5.3 El ERP es el sistema maestro
 
-Atlas sera la fuente oficial de productos, stock, ventas, clientes y operaciones. WooCommerce, catalogo web, marketplaces o apps futuras seran canales, no sistemas maestros.
+Tarevo sera la fuente oficial de productos, stock, ventas, clientes y operaciones. WooCommerce, catalogo web, marketplaces o apps futuras seran canales, no sistemas maestros.
 
 ### 5.4 El nucleo sera independiente del pais
 
@@ -60,16 +62,16 @@ La seguridad no es un modulo posterior. Debe existir desde el primer commit: aut
 
 ### 5.6 Todo sera modular mediante Apps
 
-Atlas se organizara como un ecosistema de Apps:
+Tarevo se organizara como un ecosistema de Apps:
 
-- Atlas Core
-- Atlas POS
-- Atlas Inventory
-- Atlas Warehouse
-- Atlas DTE
-- Atlas CRM
-- Atlas Reports
-- Atlas Catalog
+- Tarevo Core
+- Tarevo POS
+- Tarevo Inventory
+- Tarevo Warehouse
+- Tarevo DTE
+- Tarevo CRM
+- Tarevo Reports
+- Tarevo Catalog
 
 Las integraciones futuras se dejaran preparadas, pero no se desarrollaran hasta que haya demanda real.
 
@@ -77,31 +79,38 @@ Las integraciones futuras se dejaran preparadas, pero no se desarrollaran hasta 
 
 La arquitectura debe permitir crecer, pero no se agregaran suscripciones, servicios externos o complejidad operativa antes de necesitarlos.
 
-### 5.8 No se hardcodean secretos
+### 5.8 Disciplina de costos
+
+Tarevo debe cuidar el costo operativo desde el inicio. La arquitectura debe ser seria, pero no debe obligar a pagar herramientas, servidores o integraciones que todavia no generen valor.
+
+Regla: si una suscripcion no ayuda a vender, operar mejor o reducir riesgo real, no se contrata en la V1.
+
+### 5.9 No se hardcodean secretos
 
 Ninguna clave, token, certificado o password puede quedar en codigo, commits, frontend o chat. Todo secreto vive en variables de entorno, GitHub Secrets, Coolify Secrets o sistemas equivalentes.
 
-### 5.9 Todo debe poder auditarse
+### 5.10 Todo debe poder auditarse
 
 Toda accion critica debe registrar usuario, empresa, fecha, modulo, IP si aplica, datos anteriores y datos nuevos.
 
-### 5.10 La experiencia del usuario manda
+### 5.11 La experiencia del usuario manda
 
-Una funcion complicada debe redisenarse antes de desarrollarse. Atlas debe ser rapido, claro e intuitivo.
+Una funcion complicada debe redisenarse antes de desarrollarse. Tarevo debe ser rapido, claro e intuitivo.
 
-### 5.11 El cliente es dueno de sus datos
+### 5.12 El cliente es dueno de sus datos
 
-Atlas debe permitir exportar informacion clave en formatos estandar cuando corresponda.
+Tarevo debe permitir exportar informacion clave en formatos estandar cuando corresponda.
 
-### 5.12 La V1 sera solida, no gigante
+### 5.13 La V1 sera solida, no gigante
 
-Atlas V1 no intentara incluir todas las ideas futuras. Solo incluira lo necesario para vender, operar y validar el producto en Chile.
+Tarevo V1 no intentara incluir todas las ideas futuras. Solo incluira lo necesario para vender, operar y validar el producto en Chile.
 
 ## 6. Lemas internos
 
-- Si no simplifica el negocio del cliente, no pertenece a Atlas.
+- Si no simplifica el negocio del cliente, no pertenece a Tarevo.
 - Si una funcion no ayuda a vender mas, controlar mejor o ahorrar tiempo, no entra en la V1.
 - Primero arquitectura, despues programacion.
+- Escalar sin gastar antes de necesitarlo.
 
 ## 7. Decisiones relacionadas
 
