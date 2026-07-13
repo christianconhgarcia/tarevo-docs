@@ -1,18 +1,19 @@
 # SEC-001 - Security Architecture
 
 Documento: SEC-001  
-Version: 1.0  
-Estado: Draft aprobado para Sprint 0
+Version: 1.1  
+Estado: Aprobado para Tarevo V1  
+Fecha de alineacion: 2026-07-12
 
 ## 1. Principio
 
-Atlas se disenara bajo el principio Secure by Design.
+Tarevo se disenara bajo el principio Secure by Design.
 
 La seguridad no se agregara despues. Debe existir desde el inicio en autenticacion, base de datos, infraestructura, archivos, pagos, DTE, APIs y auditoria.
 
 ## 2. Amenaza asumida
 
-Atlas debe asumir que sera atacado.
+Tarevo debe asumir que sera atacado.
 
 Amenazas esperadas:
 
@@ -60,7 +61,7 @@ Regla absoluta:
 
 Un usuario de una empresa nunca puede ver, consultar, modificar o inferir datos de otra empresa.
 
-Toda consulta debe filtrar por `company_id` o mecanismo equivalente.
+Toda consulta debe filtrar por `company_id`, `tenant_id` o mecanismo equivalente aprobado.
 
 ## 7. Secretos
 
@@ -91,7 +92,7 @@ Los certificados digitales de clientes deben:
 
 ## 9. Archivos
 
-Archivos en R2:
+Archivos en R2 o storage S3 compatible:
 
 - Validar tipo.
 - Validar tamano.
