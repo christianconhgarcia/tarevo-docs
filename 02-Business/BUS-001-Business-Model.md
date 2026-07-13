@@ -1,6 +1,6 @@
 # BUS-001 — Business Model
 
-Version: 0.2  
+Version: 0.3  
 Estado: Aprobado para Tarevo V1  
 Fecha de aprobación comercial: 2026-07-12  
 Owner: Chris
@@ -44,6 +44,17 @@ Los precios se expresan en pesos chilenos y no incluyen IVA.
 | DTE | Límite básico | Límite ampliado | Límite superior | Según contrato |
 | Soporte | Estándar | Prioritario | Prioritario | Según contrato |
 
+## Trial inicial aprobado
+
+- Duración: 14 días corridos.
+- No requiere tarjeta bancaria para comenzar.
+- Se activa una sola vez por empresa o cuenta elegible, según las reglas antifraude que se definan.
+- El usuario debe verificar su correo antes de crear y operar una empresa.
+- Durante el trial se habilita un conjunto controlado de funciones suficiente para completar el onboarding y la primera venta.
+- El trial no implica cobros automáticos ni renovación sin consentimiento explícito.
+- Antes del vencimiento se enviarán avisos por correo.
+- Al vencer, la cuenta pasa al estado comercial definido por billing; no se eliminan datos.
+
 ## Reglas comerciales
 
 - Los límites se controlan mediante entitlements en backend.
@@ -55,7 +66,7 @@ Los precios se expresan en pesos chilenos y no incluyen IVA.
 
 ## Período de gracia
 
-El período de gracia aprobado es de 7 días después del vencimiento.
+El período de gracia aprobado es de 7 días después del vencimiento de una suscripción pagada.
 
 Después del período de gracia:
 
@@ -66,7 +77,6 @@ Después del período de gracia:
 
 ## Decisiones todavía pendientes
 
-- Duración final del trial inicial.
 - Cantidad exacta de DTE incluida por plan, después de conocer el costo del proveedor.
 - Proveedor de pagos.
 - Proveedor DTE inicial.
