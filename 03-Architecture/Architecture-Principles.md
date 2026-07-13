@@ -1,12 +1,13 @@
-# Architecture Principles - Atlas
+# Architecture Principles - Tarevo
 
 Documento: ARCH-001  
-Version: 1.0  
-Estado: Draft aprobado para Sprint 0
+Version: 1.1  
+Estado: Aprobado para Tarevo V1  
+Fecha de alineacion: 2026-07-12
 
 ## 1. Principio central
 
-Atlas sera una plataforma SaaS modular, multiempresa, cloud-first y preparada para produccion desde el primer dia.
+Tarevo sera una plataforma SaaS modular, multiempresa, cloud-first y preparada para produccion desde el primer dia.
 
 No se desarrollara pensando en Hostinger, cPanel o hosting compartido.
 
@@ -15,7 +16,7 @@ No se desarrollara pensando en Hostinger, cPanel o hosting compartido.
 ```text
 Landing / Registro / Portal Cliente
         |
-Atlas Core SaaS
+Tarevo Core SaaS
         |
 Auth - Billing - Plans - Entitlements - Companies - Users
         |
@@ -28,18 +29,18 @@ Event Bus / Workers / Audit Logs
 
 ## 3. Apps, no modulos rigidos
 
-Atlas se organizara como Apps activables por plan.
+Tarevo se organizara como Apps activables por plan.
 
 Apps V1:
 
-- Atlas Core.
-- Atlas POS.
-- Atlas Inventory.
-- Atlas Warehouse.
-- Atlas DTE.
-- Atlas CRM basico.
-- Atlas Reports.
-- Atlas Catalog preparado.
+- Tarevo Core.
+- Tarevo POS.
+- Tarevo Inventory.
+- Tarevo Warehouse.
+- Tarevo DTE.
+- Tarevo CRM basico.
+- Tarevo Reports.
+- Tarevo Catalog preparado.
 
 ## 4. Arquitectura basada en eventos
 
@@ -58,7 +59,7 @@ CRM escucha y actualiza historial del cliente
 
 ## 5. Separacion ticket, pago y DTE
 
-Atlas separa tres entidades:
+Tarevo separa tres entidades:
 
 - Ticket: intencion comercial interna.
 - Pago: transaccion financiera.
@@ -68,7 +69,7 @@ Esto permite flujos con caja central, tickets pendientes, pagos mixtos y distint
 
 ## 6. Estaciones de venta
 
-No todas las cajas son iguales. Atlas tendra estaciones configurables.
+No todas las cajas son iguales. Tarevo tendra estaciones configurables.
 
 Capacidades por estacion:
 
@@ -88,8 +89,8 @@ Cada empresa tendra un slug unico.
 Ejemplo:
 
 ```text
-ferreteriagomez.atlas.com
-supercool.atlas.com
+ferreteriagomez.app.gettarevo.com
+supercool.app.gettarevo.com
 ```
 
 La aplicacion debe resolver la empresa desde el subdominio y aislar datos estrictamente.
