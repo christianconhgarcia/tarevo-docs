@@ -1,19 +1,20 @@
-# Atlas Decision Log (ADL)
+# Tarevo Decision Log (ADL)
 
-Este documento registra decisiones aprobadas durante Sprint 0.
+Este documento registra decisiones aprobadas durante Sprint 0 y su alineacion posterior con la marca final Tarevo.
 
 ## ADL-000 - Nombre comercial
 
-Nombre comercial aprobado: Atlas.  
-Nombre tecnico: Atlas Platform.
+Nombre comercial aprobado: Tarevo.  
+Nombre tecnico: Tarevo Platform.  
+Esta decision reemplaza el nombre de trabajo anterior Atlas.
 
 ## ADL-001 - Mercado inicial
 
-Atlas iniciara en Chile.
+Tarevo iniciara en Chile.
 
-## ADL-002 - Atlas no es solo facturacion
+## ADL-002 - Tarevo no es solo facturacion
 
-Atlas sera una plataforma de gestion comercial. La facturacion electronica sera una capacidad, no la identidad del producto.
+Tarevo sera una plataforma de gestion comercial. La facturacion electronica sera una capacidad, no la identidad del producto.
 
 ## ADL-003 - Nucleo independiente del pais
 
@@ -21,11 +22,11 @@ El nucleo del ERP sera independiente de reglas tributarias. Chile/SII sera un mo
 
 ## ADL-004 - ERP como sistema maestro
 
-Atlas sera el sistema maestro de productos, stock, ventas y clientes. Canales externos no modifican stock directamente.
+Tarevo sera el sistema maestro de productos, stock, ventas y clientes. Canales externos no modifican stock directamente.
 
 ## ADL-005 - Apps como modelo modular
 
-Atlas se organizara como Apps activables por plan.
+Tarevo se organizara como Apps activables por plan.
 
 ## ADL-006 - Self-Service SaaS
 
@@ -33,7 +34,7 @@ El cliente debe poder registrarse, pagar, crear empresa, escoger subdominio y ac
 
 ## ADL-007 - PostgreSQL
 
-PostgreSQL sera la base de datos principal de Atlas.
+PostgreSQL sera la base de datos principal de Tarevo.
 
 ## ADL-008 - Infraestructura inicial
 
@@ -41,7 +42,7 @@ Infraestructura inicial: Hetzner Cloud + Coolify self-hosted + Docker + PostgreS
 
 ## ADL-009 - No Hostinger/cPanel
 
-Atlas no se desarrollara para hosting compartido, FTP, cPanel o almacenamiento persistente local.
+Tarevo no se desarrollara para hosting compartido, FTP, cPanel o almacenamiento persistente local como arquitectura final.
 
 ## ADL-010 - R2 para archivos
 
@@ -49,7 +50,7 @@ Fotos, logos, PDFs, XML y archivos de clientes se guardaran en Cloudflare R2 o s
 
 ## ADL-011 - Almacenamiento por plan
 
-Atlas podra vender almacenamiento incluido y adicional por empresa.
+Tarevo podra vender almacenamiento incluido y adicional por empresa.
 
 ## ADL-012 - Secretos fuera del codigo
 
@@ -57,7 +58,7 @@ Ninguna clave o certificado se guarda en codigo, frontend, GitHub o chat.
 
 ## ADL-013 - Seguridad por diseno
 
-Atlas se disenara bajo Secure by Design.
+Tarevo se disenara bajo Secure by Design.
 
 ## ADL-014 - Separacion ticket, pago y DTE
 
@@ -73,19 +74,19 @@ Los tickets pueden estar creados, pendientes, pagados, anulados, expirados, con 
 
 ## ADL-017 - Caja central
 
-Atlas soportara flujos donde una estacion crea tickets y otra cobra/emite documento.
+Tarevo soportara flujos donde una estacion crea tickets y otra cobra/emite documento.
 
 ## ADL-018 - Prevencion de doble documentacion tributaria
 
-Atlas debe prevenir emitir boleta y factura por la misma venta sin flujo correcto.
+Tarevo debe prevenir emitir boleta y factura por la misma venta sin flujo correcto.
 
 ## ADL-019 - Terminales POS fisicos no entran en V1
 
 La integracion con Getnet, Transbank, Redelcom, SumUp u otros se deja disenada mediante Payment Terminal Adapter, pero no conectada en V1.
 
-## ADL-020 - Atlas Warehouse
+## ADL-020 - Tarevo Warehouse
 
-Bodega sera una App premium: Atlas Warehouse.
+Bodega sera una App premium: Tarevo Warehouse.
 
 ## ADL-021 - Separacion Inventory/Warehouse
 
@@ -105,7 +106,7 @@ Las Apps no se llaman directamente. Publican y escuchan eventos.
 
 ## ADL-025 - Escalabilidad diferida
 
-La arquitectura se prepara para crecer, pero no se incorporan servicios pagos ni complejidad antes de necesitarlo.
+La arquitectura se prepara para crecer, pero no se incorporan servicios pagos ni complejidad antes de necesitarlos.
 
 ## ADL-026 - V1 disciplinada
 
@@ -114,3 +115,22 @@ La V1 incluira Core, POS, Inventory, Warehouse inicial, DTE Chile, CRM basico, r
 ## ADL-027 - Primero arquitectura, despues programacion
 
 No se desarrolla una funcionalidad sin documento o decision relacionada.
+
+## ADL-028 - Fuente oficial de verdad
+
+La documentacion vigente en `tarevo-docs` es la fuente oficial para producto, arquitectura y alcance. Cuando exista contradiccion, se aplica este orden:
+
+1. Constitucion.
+2. ADL aprobado mas reciente.
+3. Blueprints y registros maestros.
+4. PRD de slice aprobado.
+5. Backlog y documentos operativos.
+6. Codigo existente, que debe corregirse si contradice una decision superior.
+
+## ADL-029 - Estrategia de ramas
+
+- `main`: codigo integrado y aprobado.
+- `production`: version desplegada o lista para desplegar.
+- ramas de trabajo: cambios aislados y revisables.
+
+Los cambios de documentacion de Fase 0 se preparan en una rama y se integran tras revision.
