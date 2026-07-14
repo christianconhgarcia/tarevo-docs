@@ -26,6 +26,9 @@ La interfaz inicial sera en espanol. El codigo usara ingles.
 | Venta | Sale | Operacion comercial confirmada. |
 | Pago | Payment | Registro financiero asociado a venta o ticket. |
 | Caja | Cash Session | Sesion financiera donde se registran cobros. |
+| Caja registradora | Cash Register | Recurso fisico o logico donde se abre una sesion de caja. |
+| Asignacion operativa | User Cash Assignment | Autorizacion que vincula usuario, sucursal y caja. |
+| Caja predeterminada | Default Cash Register | Caja sugerida o bloqueada para el usuario asignado. |
 | POS | POS | Interfaz para realizar ventas. |
 | DTE | DTE | Documento Tributario Electronico. |
 | Permiso | Permission | Capacidad asignada a rol o usuario. |
@@ -46,6 +49,7 @@ La interfaz inicial sera en espanol. El codigo usara ingles.
 - No usar "orden" para ventas; usar ticket o venta segun corresponda.
 - No usar "admin del sistema" para usuarios internos; usar SuperAdmin.
 - No confundir caja con POS.
+- No confundir caja registradora con sesion de caja.
 - No confundir permiso con entitlement.
 
 ## Diferencias clave
@@ -61,6 +65,12 @@ Venta: operacion comercial confirmada.
 Caja: sesion financiera.
 
 POS: interfaz donde se registra la operacion.
+
+### Caja registradora vs Sesion de caja
+
+Caja registradora: recurso configurable asignado a una sucursal.
+
+Sesion de caja: apertura operativa de una caja registradora por un usuario.
 
 ### Permiso vs Entitlement
 

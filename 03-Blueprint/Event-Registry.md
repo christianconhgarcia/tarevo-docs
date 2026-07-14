@@ -45,6 +45,7 @@ Toda accion relevante genera un evento. Los modulos escuchan eventos sin acoplar
 | EVT-024 | DteIssued | DTE | Reports, Audit | Si |
 | EVT-025 | BackupCompleted | Infrastructure | SuperAdmin, Audit | Si |
 | EVT-026 | BackupFailed | Infrastructure | SuperAdmin, Alerts | Si |
+| EVT-027 | UserCashAssignmentsUpdated | Admin | Audit, Reports, Customer Success | Si |
 
 ## Estructura minima de evento
 

@@ -37,6 +37,8 @@ Definir contratos de negocio para APIs de Tarevo. Este documento no es solo una 
 | API-020 | Cambiar plan | SuperAdmin | platform.billing.manage | SubscriptionChanged |
 | API-021 | Suspender empresa | SuperAdmin | platform.tenants.suspend | SubscriptionSuspended |
 | API-022 | Crear ticket soporte | Public/Tenant | support.create | SupportTicketCreated |
+| API-023 | Consultar asignacion operativa de usuario | Tenant ERP | users.view | none |
+| API-024 | Actualizar asignacion operativa de usuario | Tenant ERP | users.update | UserCashAssignmentsUpdated |
 
 ## Formato de contrato
 
@@ -65,6 +67,7 @@ Auditoria:
 - Ninguna API confia en datos enviados por frontend.
 - Las respuestas de error deben ser consistentes.
 - Toda API paginada debe soportar filtros y ordenamiento cuando aplique.
+- Las APIs de caja deben validar permiso y asignacion operativa de usuario cuando el usuario no tenga acceso global administrativo.
 
 ## Regla para Codex
 Codex no debe crear endpoints nuevos sin registrarlos aqui o vincularlos a un contrato existente.
