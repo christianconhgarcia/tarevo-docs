@@ -91,6 +91,22 @@ Navegacion principal:
   - DTE
   - Integraciones
 
+### Fase 1 - Navegacion unificada implementada
+
+La Fase 1 reorganiza los modulos existentes en una barra lateral persistente bajo `/app/*` sin cambiar reglas de negocio ni contratos de API.
+
+Mapa implementado:
+
+- Inicio: Dashboard.
+- Ventas y caja: Punto de venta, Cajas y sesiones, Historial de ventas, Historial de devoluciones, DTE Chile, Clientes.
+- Catalogo: Productos, Catalogo web e integraciones.
+- Inventario y logistica: Existencias y bodegas, Inventario avanzado, Picking y packing.
+- Compras: Ordenes y proveedores.
+- Reportes y control: Control y reportes, Diagnostico operativo.
+- Administracion: Administracion, Plan y facturacion.
+
+Detalle tecnico y criterios: `05-Development/PHASE-1-UNIFIED-NAVIGATION.md`.
+
 ## SuperAdmin Console
 
 Navegacion principal:
