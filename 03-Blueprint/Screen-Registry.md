@@ -68,6 +68,19 @@ Inventariar las pantallas oficiales de Tarevo. Ninguna pantalla puede desarrolla
 | SCR-TE-034 | Tenant ERP | Configuracion | Roles y permisos | Alta | Si |
 | SCR-TE-035 | Tenant ERP | Configuracion | DTE | Alta | Si |
 
+### Pantallas incorporadas al shell persistente en Fase 1
+
+Estas pantallas ya existian en producto y quedaron accesibles desde la navegacion unificada:
+
+| Ruta | Mundo | Modulo | Pantalla |
+|---|---|---|---|
+| `/app/commerce` | Tenant ERP | Catalogo | Catalogo web e integraciones |
+| `/app/refunds` | Tenant ERP | Ventas | Historial de devoluciones |
+| `/app/inventory-control` | Tenant ERP | Inventario | Inventario avanzado |
+| `/app/billing` | Tenant ERP | Administracion | Plan y facturacion |
+| `/app/management` | Tenant ERP | Reportes | Control y reportes |
+| `/app/operations` | Tenant ERP | Operaciones | Diagnostico operativo |
+
 ## SuperAdmin Console
 
 | ID | Mundo | Modulo | Pantalla | Prioridad | V1 |
