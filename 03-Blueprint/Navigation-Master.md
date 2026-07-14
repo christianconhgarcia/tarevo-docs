@@ -107,6 +107,31 @@ Mapa implementado:
 
 Detalle tecnico y criterios: `05-Development/PHASE-1-UNIFIED-NAVIGATION.md`.
 
+### Fase 2 - Agrupacion funcional implementada
+
+La Fase 2 mantiene la navegacion unificada de Fase 1 y reordena las rutas visibles por funcion real del negocio, sin nuevos endpoints ni cambios de reglas.
+
+Mapa implementado:
+
+- Inicio: Dashboard.
+- Ventas y caja: Punto de venta, Cajas y sesiones, Historial de ventas, Devoluciones, DTE Chile, Clientes.
+- Catalogo: Productos, Categorias, Marcas, Variantes, Precios y margenes, Importar, Catalogo web e integraciones.
+- Inventario y logistica: Existencias, Kardex y trazabilidad, Ubicaciones, Transferencias, Conteos, Picking y packing.
+- Compras: Ordenes y proveedores.
+- Reportes: Reportes, Preparacion de la empresa.
+- Administracion: Empresa y usuarios, Plan, facturacion y soporte.
+
+Redirects legacy obligatorios:
+
+- `/app/commerce` -> `/app/catalog/integrations`
+- `/app/refunds` -> `/app/sales/refunds`
+- `/app/inventory-control` -> `/app/inventory/kardex`
+- `/app/management` -> `/app/reports`
+- `/app/operations` -> `/app/reports/operations`
+- `/app/billing` -> `/app/admin/billing`
+
+Detalle tecnico y criterios: `05-Development/PHASE-2-FUNCTIONAL-GROUPING.md`.
+
 ## SuperAdmin Console
 
 Navegacion principal:

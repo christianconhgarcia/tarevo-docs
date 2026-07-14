@@ -81,6 +81,30 @@ Estas pantallas ya existian en producto y quedaron accesibles desde la navegacio
 | `/app/management` | Tenant ERP | Reportes | Control y reportes |
 | `/app/operations` | Tenant ERP | Operaciones | Diagnostico operativo |
 
+### Rutas oficiales reorganizadas en Fase 2
+
+Estas rutas sustituyen rutas legacy de Fase 1 cuando corresponde. Los IDs de pantalla se mantienen; cambia solo la ubicacion funcional visible.
+
+| Ruta | Mundo | Modulo | Pantalla |
+|---|---|---|---|
+| `/app/catalog` | Tenant ERP | Catalogo | Productos |
+| `/app/catalog/categories` | Tenant ERP | Catalogo | Categorias |
+| `/app/catalog/brands` | Tenant ERP | Catalogo | Marcas |
+| `/app/catalog/variants` | Tenant ERP | Catalogo | Variantes |
+| `/app/catalog/pricing` | Tenant ERP | Catalogo | Precios y margenes |
+| `/app/catalog/import` | Tenant ERP | Catalogo | Importar |
+| `/app/catalog/integrations` | Tenant ERP | Catalogo | Catalogo web e integraciones |
+| `/app/inventory` | Tenant ERP | Inventario | Existencias |
+| `/app/inventory/kardex` | Tenant ERP | Inventario | Kardex y trazabilidad |
+| `/app/inventory/locations` | Tenant ERP | Inventario | Ubicaciones |
+| `/app/inventory/transfers` | Tenant ERP | Inventario | Transferencias |
+| `/app/inventory/counts` | Tenant ERP | Inventario | Conteos fisicos |
+| `/app/sales/refunds` | Tenant ERP | Ventas | Historial de devoluciones |
+| `/app/reports` | Tenant ERP | Reportes | Reportes |
+| `/app/reports/operations` | Tenant ERP | Reportes | Preparacion de la empresa |
+| `/app/admin` | Tenant ERP | Administracion | Empresa y usuarios |
+| `/app/admin/billing` | Tenant ERP | Administracion | Plan, facturacion y soporte |
+
 ## SuperAdmin Console
 
 | ID | Mundo | Modulo | Pantalla | Prioridad | V1 |
