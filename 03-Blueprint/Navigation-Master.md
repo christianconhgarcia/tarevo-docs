@@ -132,6 +132,14 @@ Redirects legacy obligatorios:
 
 Detalle tecnico y criterios: `05-Development/PHASE-2-FUNCTIONAL-GROUPING.md`.
 
+### Fase 3 - Asignaciones operativas implementadas
+
+La Fase 3 mantiene la navegacion de Fase 2. La administracion de sucursal/caja por usuario vive dentro de `Administracion > Empresa y usuarios`, en la seccion Usuarios.
+
+No se agrega una ruta principal nueva; se amplia la pantalla existente para evitar duplicar gestion de usuarios.
+
+Detalle tecnico y criterios: `05-Development/PHASE-3-USER-CASH-ASSIGNMENTS.md`.
+
 ## SuperAdmin Console
 
 Navegacion principal:

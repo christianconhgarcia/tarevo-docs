@@ -74,6 +74,9 @@ Ningun modulo debe implementar reglas de negocio que contradigan este documento.
 | BR-6003 | Todo cierre calcula diferencias. | Si |
 | BR-6004 | Toda diferencia requiere motivo. | Si |
 | BR-6005 | No puede cerrarse dos veces la misma caja. | Si |
+| BR-6006 | Un usuario sin acceso global administrativo solo puede abrir cajas asignadas activas. | Si |
+| BR-6007 | Un usuario solo puede mantener una sesion de caja abierta a la vez. | Si |
+| BR-6008 | Un usuario sin acceso global administrativo solo puede administrar su propia sesion de caja. | Si |
 
 ## Ventas
 
@@ -106,6 +109,7 @@ Ningun modulo debe implementar reglas de negocio que contradigan este documento.
 | BR-10001 | Toda accion requiere autenticacion. | Si |
 | BR-10002 | Toda accion requiere autorizacion. | Si |
 | BR-10003 | Los permisos siempre se validan en backend. | Si |
+| BR-10004 | Las asignaciones operativas de usuario quedan auditadas al crearse, actualizarse o desactivarse. | Si |
 
 ## Billing
 

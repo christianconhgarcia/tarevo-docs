@@ -51,6 +51,12 @@ Estado: Vivo
 
 PRD EPIC-01: Del visitante a la primera venta.
 
+## Desarrollo local reciente
+
+- Fase 1: navegacion unificada implementada localmente.
+- Fase 2: agrupacion funcional implementada localmente.
+- Fase 3: asignaciones usuario-sucursal-caja implementadas localmente. Ver `05-Development/PHASE-3-USER-CASH-ASSIGNMENTS.md`.
+
 ## Regla operativa
 
 Si una decision no esta documentada y aprobada, no se implementa.

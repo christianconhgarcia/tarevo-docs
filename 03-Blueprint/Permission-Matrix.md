@@ -164,6 +164,8 @@ plan.dte.enabled
 ## Reglas
 
 - Un usuario puede tener permiso, pero si el plan no tiene entitlement, la funcion queda bloqueada.
+- Un usuario puede tener permisos de caja, pero si no tiene acceso global administrativo tambien necesita asignacion activa a sucursal/caja.
+- El acceso global administrativo a caja requiere `settings.cash_registers.manage`, `cash.open` y `cash.view`.
 - La UI debe ocultar o bloquear funciones no permitidas.
 - El backend siempre valida permisos y entitlements.
 - Nunca confiar solo en el frontend.

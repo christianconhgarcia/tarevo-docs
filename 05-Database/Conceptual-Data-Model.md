@@ -248,6 +248,40 @@ Campos conceptuales:
 - type
 - status
 
+### UserBranchAssignment
+
+Asignacion operativa de un usuario a una sucursal autorizada.
+
+Campos conceptuales:
+
+- id
+- company_id o tenant_id
+- user_id
+- branch_id
+- is_primary
+- is_active
+- assigned_by
+- assigned_at
+- deactivated_at nullable
+
+### UserCashRegisterAssignment
+
+Asignacion operativa de un usuario a una caja autorizada.
+
+Campos conceptuales:
+
+- id
+- company_id o tenant_id
+- user_id
+- branch_id
+- cash_register_id
+- is_default
+- can_switch_cash_register
+- is_active
+- assigned_by
+- assigned_at
+- deactivated_at nullable
+
 ### Ticket
 
 Documento interno de venta. No es DTE.

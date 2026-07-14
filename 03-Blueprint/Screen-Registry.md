@@ -105,6 +105,12 @@ Estas rutas sustituyen rutas legacy de Fase 1 cuando corresponde. Los IDs de pan
 | `/app/admin` | Tenant ERP | Administracion | Empresa y usuarios |
 | `/app/admin/billing` | Tenant ERP | Administracion | Plan, facturacion y soporte |
 
+### Ampliacion de pantalla en Fase 3
+
+| Ruta | Mundo | Modulo | Pantalla | Cambio |
+|---|---|---|---|---|
+| `/app/admin` | Tenant ERP | Administracion | Empresa y usuarios | Gestion de asignacion operativa por usuario: sucursal, caja predeterminada y cambio de caja |
+
 ## SuperAdmin Console
 
 | ID | Mundo | Modulo | Pantalla | Prioridad | V1 |
