@@ -1,12 +1,13 @@
 # Screen Registry
 
-Version: 0.1
-Estado: Aprobado como estructura inicial
+Version: 0.6
+Estado: Aprobado y actualizado con la implementación V1
 
 ## Objetivo
-Inventariar las pantallas oficiales de Tarevo. Ninguna pantalla puede desarrollarse si no existe en este registro.
 
-## Convencion
+Inventariar las pantallas oficiales de Tarevo. Ninguna pantalla nueva puede desarrollarse sin declarar su mundo, módulo, ruta y alcance de acceso.
+
+## Convención
 
 - SCR: Screen
 - PW: Public Website
@@ -15,119 +16,100 @@ Inventariar las pantallas oficiales de Tarevo. Ninguna pantalla puede desarrolla
 
 ## Public Website
 
-| ID | Mundo | Modulo | Pantalla | Prioridad | V1 |
-|---|---|---|---|---|---|
-| SCR-PW-001 | Public Website | Marketing | Landing | Alta | Si |
-| SCR-PW-002 | Public Website | Marketing | Planes | Alta | Si |
-| SCR-PW-003 | Public Website | Marketing | Comparativa | Media | Si |
-| SCR-PW-004 | Public Website | Auth | Registro | Alta | Si |
-| SCR-PW-005 | Public Website | Auth | Login | Alta | Si |
-| SCR-PW-006 | Public Website | Auth | Recuperar contrasena | Alta | Si |
-| SCR-PW-007 | Public Website | Auth | Verificar correo | Alta | Si |
-| SCR-PW-008 | Public Website | Customer Portal | Portal del cliente | Alta | Si |
-| SCR-PW-009 | Public Website | Customer Portal | Gestion de suscripcion | Alta | Si |
-| SCR-PW-010 | Public Website | CMS | FAQ publica | Media | Si |
+| ID | Mundo | Módulo | Pantalla | Ruta / ubicación | Prioridad | V1 | Estado |
+|---|---|---|---|---|---|---|---|
+| SCR-PW-001 | Public Website | Marketing | Landing | `/` | Alta | Sí | Implementada |
+| SCR-PW-002 | Public Website | Marketing | Planes | Sección `#precios` del landing | Alta | Sí | Consolidada |
+| SCR-PW-003 | Public Website | Marketing | Comparativa | `/compare` | Media | Sí | Implementada en Fase 6 |
+| SCR-PW-004 | Public Website | Auth | Registro | `/register` | Alta | Sí | Implementada |
+| SCR-PW-005 | Public Website | Auth | Login | `/login` | Alta | Sí | Implementada |
+| SCR-PW-006 | Public Website | Auth | Recuperar contraseña | `/forgot-password` y `/reset-password` | Alta | Sí | Implementada |
+| SCR-PW-007 | Public Website | Auth | Verificar correo | `/verify-email` | Alta | Sí | Implementada |
+| SCR-PW-008 | Public Website | Customer Portal | Portal del cliente | Sin ruta | Baja | No beta inicial | Postergada |
+| SCR-PW-009 | Public Website | Customer Portal | Gestión de suscripción | `/app/admin/billing` autenticado | Alta | Sí | Consolidada en Tenant ERP |
+| SCR-PW-010 | Public Website | CMS | FAQ pública | Sección `#preguntas` del landing | Media | Sí | Consolidada |
 
 ## Tenant ERP
 
-| ID | Mundo | Modulo | Pantalla | Prioridad | V1 |
-|---|---|---|---|---|---|
-| SCR-TE-001 | Tenant ERP | Dashboard | Inicio | Alta | Si |
-| SCR-TE-002 | Tenant ERP | Onboarding | Checklist inicial | Alta | Si |
-| SCR-TE-003 | Tenant ERP | Empresa | Crear empresa | Alta | Si |
-| SCR-TE-004 | Tenant ERP | Sucursales | Crear sucursal | Alta | Si |
-| SCR-TE-005 | Tenant ERP | Bodegas | Crear bodega | Alta | Si |
-| SCR-TE-006 | Tenant ERP | Caja | Crear caja | Alta | Si |
-| SCR-TE-007 | Tenant ERP | Productos | Listado | Alta | Si |
-| SCR-TE-008 | Tenant ERP | Productos | Crear producto | Alta | Si |
-| SCR-TE-009 | Tenant ERP | Productos | Editar producto | Alta | Si |
-| SCR-TE-010 | Tenant ERP | Productos | Categorias | Media | Si |
-| SCR-TE-011 | Tenant ERP | Productos | Marcas | Media | Si |
-| SCR-TE-012 | Tenant ERP | Inventario | Stock | Alta | Si |
-| SCR-TE-013 | Tenant ERP | Inventario | Kardex | Alta | Si |
-| SCR-TE-014 | Tenant ERP | Inventario | Ajustes | Alta | Si |
-| SCR-TE-015 | Tenant ERP | Warehouse | Bodegas | Alta | Si |
-| SCR-TE-016 | Tenant ERP | Warehouse | Ubicaciones | Alta | Si |
-| SCR-TE-017 | Tenant ERP | Warehouse | Transferencias | Alta | Si |
-| SCR-TE-018 | Tenant ERP | Warehouse | Picking | Media | Si |
-| SCR-TE-019 | Tenant ERP | POS | Venta rapida | Alta | Si |
-| SCR-TE-020 | Tenant ERP | Caja | Apertura | Alta | Si |
-| SCR-TE-021 | Tenant ERP | Caja | Cierre | Alta | Si |
-| SCR-TE-022 | Tenant ERP | Caja | Arqueo | Alta | Si |
-| SCR-TE-023 | Tenant ERP | Ventas | Historial | Alta | Si |
-| SCR-TE-024 | Tenant ERP | Ventas | Detalle venta | Alta | Si |
-| SCR-TE-025 | Tenant ERP | Clientes | Listado | Alta | Si |
-| SCR-TE-026 | Tenant ERP | Clientes | Ficha cliente | Media | Si |
-| SCR-TE-027 | Tenant ERP | Compras | Ordenes | Media | Si |
-| SCR-TE-028 | Tenant ERP | Compras | Recepcion | Media | Si |
-| SCR-TE-029 | Tenant ERP | Reportes | Ventas | Alta | Si |
-| SCR-TE-030 | Tenant ERP | Reportes | Inventario | Alta | Si |
-| SCR-TE-031 | Tenant ERP | Reportes | Caja | Alta | Si |
-| SCR-TE-032 | Tenant ERP | Configuracion | Empresa | Alta | Si |
-| SCR-TE-033 | Tenant ERP | Configuracion | Usuarios | Alta | Si |
-| SCR-TE-034 | Tenant ERP | Configuracion | Roles y permisos | Alta | Si |
-| SCR-TE-035 | Tenant ERP | Configuracion | DTE | Alta | Si |
+| ID | Mundo | Módulo | Pantalla | Ruta / ubicación | Prioridad | V1 | Estado |
+|---|---|---|---|---|---|---|---|
+| SCR-TE-001 | Tenant ERP | Dashboard | Inicio | `/app` | Alta | Sí | Implementada |
+| SCR-TE-002 | Tenant ERP | Onboarding | Checklist inicial | `/onboarding` | Alta | Sí | Implementada |
+| SCR-TE-003 | Tenant ERP | Empresa | Crear empresa | Onboarding / Administración | Alta | Sí | Implementada |
+| SCR-TE-004 | Tenant ERP | Sucursales | Crear sucursal | Onboarding / Administración | Alta | Sí | Implementada |
+| SCR-TE-005 | Tenant ERP | Bodegas | Crear bodega | Onboarding / Inventario | Alta | Sí | Implementada |
+| SCR-TE-006 | Tenant ERP | Caja | Crear caja | Onboarding / Caja | Alta | Sí | Implementada |
+| SCR-TE-007 | Tenant ERP | Productos | Listado | `/app/catalog` | Alta | Sí | Implementada |
+| SCR-TE-008 | Tenant ERP | Productos | Crear producto | Acción dentro de `/app/catalog` | Alta | Sí | Implementada |
+| SCR-TE-009 | Tenant ERP | Productos | Editar producto | Acción dentro de `/app/catalog` | Alta | Sí | Implementada |
+| SCR-TE-010 | Tenant ERP | Productos | Categorías | Sección dentro de `/app/catalog` | Media | Sí | Consolidada |
+| SCR-TE-011 | Tenant ERP | Productos | Marcas | Sección dentro de `/app/catalog` | Media | Sí | Consolidada |
+| SCR-TE-012 | Tenant ERP | Inventario | Stock | `/app/inventory` | Alta | Sí | Implementada |
+| SCR-TE-013 | Tenant ERP | Inventario | Kardex | `/app/inventory/kardex` | Alta | Sí | Implementada |
+| SCR-TE-014 | Tenant ERP | Inventario | Ajustes | Flujo dentro de Inventario/Kardex | Alta | Sí | Consolidada |
+| SCR-TE-015 | Tenant ERP | Warehouse | Bodegas | Inventario / Administración | Alta | Sí | Implementada |
+| SCR-TE-016 | Tenant ERP | Warehouse | Ubicaciones | `/app/inventory/locations` | Alta | Sí | Implementada |
+| SCR-TE-017 | Tenant ERP | Warehouse | Transferencias | `/app/inventory/transfers` | Alta | Sí | Implementada |
+| SCR-TE-018 | Tenant ERP | Warehouse | Picking y packing | `/app/picking-packing` | Media | Sí | Implementada |
+| SCR-TE-019 | Tenant ERP | POS | Venta rápida | `/pos` y `/app/pos` | Alta | Sí | Implementada |
+| SCR-TE-020 | Tenant ERP | Caja | Apertura | `/app/cash` | Alta | Sí | Implementada |
+| SCR-TE-021 | Tenant ERP | Caja | Cierre | `/app/cash` | Alta | Sí | Implementada |
+| SCR-TE-022 | Tenant ERP | Caja | Arqueo | `/app/cash` | Alta | Sí | Implementada con arqueo ciego |
+| SCR-TE-023 | Tenant ERP | Ventas | Historial | `/app/sales` | Alta | Sí | Implementada |
+| SCR-TE-024 | Tenant ERP | Ventas | Detalle venta | Flujo dentro de `/app/sales` | Alta | Sí | Implementada |
+| SCR-TE-025 | Tenant ERP | Clientes | Listado | `/app/customers` | Alta | Sí | Implementada |
+| SCR-TE-026 | Tenant ERP | Clientes | Ficha cliente | Flujo dentro de `/app/customers` | Media | Sí | Implementada |
+| SCR-TE-027 | Tenant ERP | Compras | Órdenes y proveedores | `/app/purchases` | Media | Sí | Implementada |
+| SCR-TE-028 | Tenant ERP | Compras | Recepción | Flujo dentro de `/app/purchases` | Media | Sí | Implementada |
+| SCR-TE-029 | Tenant ERP | Reportes | Ventas | `/app/reports` | Alta | Sí | Implementada |
+| SCR-TE-030 | Tenant ERP | Reportes | Inventario | `/app/reports` | Alta | Sí | Implementada |
+| SCR-TE-031 | Tenant ERP | Reportes | Caja | `/app/reports` | Alta | Sí | Implementada |
+| SCR-TE-032 | Tenant ERP | Configuración | Empresa | `/app/admin` | Alta | Sí | Implementada |
+| SCR-TE-033 | Tenant ERP | Configuración | Usuarios | `/app/admin` | Alta | Sí | Implementada |
+| SCR-TE-034 | Tenant ERP | Configuración | Roles y permisos | `/app/admin` | Alta | Sí | Implementada |
+| SCR-TE-035 | Tenant ERP | Configuración | DTE | `/app/dte` | Alta | Sí | Interfaz implementada; proveedor externo pendiente |
+| SCR-TE-036 | Tenant ERP | Ventas | Historial de devoluciones | `/app/sales/refunds` | Alta | Sí | Implementada |
+| SCR-TE-037 | Tenant ERP | Catálogo | Variantes y lotes | `/app/catalog/variants` | Media | Sí | Implementada |
+| SCR-TE-038 | Tenant ERP | Catálogo | Importación | Acción dentro de `/app/catalog` | Alta | Sí | Implementada |
+| SCR-TE-039 | Tenant ERP | Catálogo | Integraciones | `/app/catalog/integrations` | Media | Sí | Implementada |
+| SCR-TE-040 | Tenant ERP | Inventario | Conteos físicos | `/app/inventory/counts` | Alta | Sí | Implementada |
+| SCR-TE-041 | Tenant ERP | Reportes | Preparación operativa | `/app/reports/operations` | Media | Sí | Implementada |
+| SCR-TE-042 | Tenant ERP | Administración | Plan, facturación y soporte | `/app/admin/billing` | Alta | Sí | Implementada; Flow externo pendiente |
 
-### Pantallas incorporadas al shell persistente en Fase 1
+## Consolidación de rutas
 
-Estas pantallas ya existian en producto y quedaron accesibles desde la navegacion unificada:
+Las rutas legacy se mantienen como redirects cuando corresponde:
 
-| Ruta | Mundo | Modulo | Pantalla |
-|---|---|---|---|
-| `/app/commerce` | Tenant ERP | Catalogo | Catalogo web e integraciones |
-| `/app/refunds` | Tenant ERP | Ventas | Historial de devoluciones |
-| `/app/inventory-control` | Tenant ERP | Inventario | Inventario avanzado |
-| `/app/billing` | Tenant ERP | Administracion | Plan y facturacion |
-| `/app/management` | Tenant ERP | Reportes | Control y reportes |
-| `/app/operations` | Tenant ERP | Operaciones | Diagnostico operativo |
-
-### Rutas oficiales reorganizadas en Fase 2
-
-Estas rutas sustituyen rutas legacy de Fase 1 cuando corresponde. Los IDs de pantalla se mantienen; cambia solo la ubicacion funcional visible.
-
-| Ruta | Mundo | Modulo | Pantalla |
-|---|---|---|---|
-| `/app/catalog` | Tenant ERP | Catalogo | Productos |
-| `/app/catalog/categories` | Tenant ERP | Catalogo | Categorias |
-| `/app/catalog/brands` | Tenant ERP | Catalogo | Marcas |
-| `/app/catalog/variants` | Tenant ERP | Catalogo | Variantes |
-| `/app/catalog/pricing` | Tenant ERP | Catalogo | Precios y margenes |
-| `/app/catalog/import` | Tenant ERP | Catalogo | Importar |
-| `/app/catalog/integrations` | Tenant ERP | Catalogo | Catalogo web e integraciones |
-| `/app/inventory` | Tenant ERP | Inventario | Existencias |
-| `/app/inventory/kardex` | Tenant ERP | Inventario | Kardex y trazabilidad |
-| `/app/inventory/locations` | Tenant ERP | Inventario | Ubicaciones |
-| `/app/inventory/transfers` | Tenant ERP | Inventario | Transferencias |
-| `/app/inventory/counts` | Tenant ERP | Inventario | Conteos fisicos |
-| `/app/sales/refunds` | Tenant ERP | Ventas | Historial de devoluciones |
-| `/app/reports` | Tenant ERP | Reportes | Reportes |
-| `/app/reports/operations` | Tenant ERP | Reportes | Preparacion de la empresa |
-| `/app/admin` | Tenant ERP | Administracion | Empresa y usuarios |
-| `/app/admin/billing` | Tenant ERP | Administracion | Plan, facturacion y soporte |
-
-### Ampliacion de pantalla en Fase 3
-
-| Ruta | Mundo | Modulo | Pantalla | Cambio |
-|---|---|---|---|---|
-| `/app/admin` | Tenant ERP | Administracion | Empresa y usuarios | Gestion de asignacion operativa por usuario: sucursal, caja predeterminada y cambio de caja |
+- `/app/commerce` → `/app/catalog/integrations`
+- `/app/refunds` → `/app/sales/refunds`
+- `/app/inventory-control` → `/app/inventory/kardex`
+- `/app/management` → `/app/reports`
+- `/app/operations` → `/app/reports/operations`
+- `/app/billing` → `/app/admin/billing`
+- `/app/catalog/products` → `/app/catalog`
+- `/app/catalog/categories` → `/app/catalog`
+- `/app/catalog/brands` → `/app/catalog`
+- `/app/catalog/pricing` → `/app/catalog`
+- `/app/catalog/import` → `/app/catalog`
 
 ## SuperAdmin Console
 
-| ID | Mundo | Modulo | Pantalla | Prioridad | V1 |
-|---|---|---|---|---|---|
-| SCR-SA-001 | SuperAdmin | Dashboard | Inicio global | Alta | Si |
-| SCR-SA-002 | SuperAdmin | Empresas | Listado | Alta | Si |
-| SCR-SA-003 | SuperAdmin | Empresas | Detalle empresa | Alta | Si |
-| SCR-SA-004 | SuperAdmin | Planes | Listado planes | Alta | Si |
-| SCR-SA-005 | SuperAdmin | Planes | Entitlements | Alta | Si |
-| SCR-SA-006 | SuperAdmin | Billing | Suscripciones | Alta | Si |
-| SCR-SA-007 | SuperAdmin | Billing | Pagos | Alta | Si |
-| SCR-SA-008 | SuperAdmin | Customer Success | Onboarding clientes | Alta | Si |
-| SCR-SA-009 | SuperAdmin | Soporte | Tickets | Alta | Si |
-| SCR-SA-010 | SuperAdmin | CMS | Landing CMS | Media | Si |
-| SCR-SA-011 | SuperAdmin | Infraestructura | Health checks | Alta | Si |
-| SCR-SA-012 | SuperAdmin | Feature Flags | Funciones | Media | Si |
-| SCR-SA-013 | SuperAdmin | Configuracion | Global | Alta | Si |
+| ID | Mundo | Módulo | Pantalla | Ruta / ubicación | Prioridad | V1 | Estado |
+|---|---|---|---|---|---|---|---|
+| SCR-SA-001 | SuperAdmin | Dashboard | Inicio global | `/superadmin` > Dashboard global | Alta | Sí | Implementada |
+| SCR-SA-002 | SuperAdmin | Empresas | Listado | `/superadmin` > Empresas | Alta | Sí | Implementada |
+| SCR-SA-003 | SuperAdmin | Empresas | Detalle empresa | `/superadmin` > Empresas > Ver detalle | Alta | Sí | Implementada en Fase 6 |
+| SCR-SA-004 | SuperAdmin | Planes | Listado planes | Suscripciones / Configuración global | Alta | Sí | Consolidada |
+| SCR-SA-005 | SuperAdmin | Planes | Entitlements | Suscripciones y límites efectivos | Alta | Sí | Implementada en backend; resumen consolidado |
+| SCR-SA-006 | SuperAdmin | Billing | Suscripciones | `/superadmin` > Suscripciones | Alta | Sí | Implementada |
+| SCR-SA-007 | SuperAdmin | Billing | Pagos | Suscripciones / proveedor externo | Alta | Sí | Parcial; Flow pendiente |
+| SCR-SA-008 | SuperAdmin | Customer Success | Onboarding clientes | `/superadmin` > Customer Success | Alta | Sí | Implementada |
+| SCR-SA-009 | SuperAdmin | Soporte | Tickets | `/superadmin` > Tickets de soporte | Alta | Sí | Implementada |
+| SCR-SA-010 | SuperAdmin | CMS | Landing CMS | `/superadmin` > Landing CMS | Media | Sí | Implementada |
+| SCR-SA-011 | SuperAdmin | Infraestructura | Health checks | `/superadmin` > Infraestructura y `/superadmin/operations` | Alta | Sí | Implementada |
+| SCR-SA-012 | SuperAdmin | Feature Flags | Funciones | `/superadmin` > Feature Flags | Media | Sí | Implementada |
+| SCR-SA-013 | SuperAdmin | Configuración | Global | `/superadmin` > Configuración global | Alta | Sí | Implementada en Fase 6 |
 
 ## Regla
-El Screen Registry se ampliara por Epic. El ID de una pantalla nunca debe cambiar aunque cambie su nombre visible.
+
+El Screen Registry se amplía por Epic o fase. El ID de una pantalla nunca debe cambiar aunque cambie su nombre visible, ubicación o nivel de consolidación.
