@@ -1,162 +1,221 @@
 # Navigation Master
 
-Version: 0.1
-Estado: Aprobado
+Version: 0.6
+Estado: Aprobado y alineado con production
 
 ## Objetivo
-Definir la navegacion principal de Tarevo antes de disenar pantallas individuales.
+
+Definir la navegación principal vigente de Tarevo y registrar las consolidaciones realizadas durante el desarrollo.
 
 ## Mundos de Tarevo
 
 Tarevo se divide en tres mundos:
 
-1. Public Website
-2. Tenant ERP
-3. SuperAdmin Console
+1. Public Website.
+2. Tenant ERP.
+3. SuperAdmin Console.
 
-Ninguna funcionalidad debe mezclarse entre mundos sin una justificacion explicita.
+Ninguna funcionalidad debe mezclarse entre mundos sin una justificación explícita.
 
 ## Public Website
 
-Navegacion publica:
+Navegación y superficies públicas vigentes:
 
-- Inicio
-- Caracteristicas
-- Apps
-- Planes
-- Comparativa
-- FAQ
-- Contacto
-- Login
-- Registro
+- Inicio: `/`.
+- Producto y módulos: secciones del landing.
+- DTE Chile: sección del landing.
+- Planes: sección `#precios` del landing.
+- Comparativa: `/compare`.
+- FAQ: sección `#preguntas` del landing.
+- Login: `/login`.
+- Registro: `/register`.
+- Verificación: `/verify-email`.
+- Recuperación: `/forgot-password` y `/reset-password`.
+- Invitaciones: `/accept-invitation`.
 
 Flujo principal:
 
 ```text
 Landing
-  -> Planes
+  -> Planes o Comparativa
   -> Registro
   -> Verificar correo
-  -> Crear empresa
   -> Onboarding
+  -> Empresa / sucursal / bodega / caja
+  -> Primer producto
+  -> Apertura de caja
   -> Primera venta
 ```
 
+Decisiones de consolidación:
+
+- Planes permanece dentro del landing.
+- FAQ permanece dentro del landing.
+- La comparativa sí tiene ruta independiente.
+- La gestión de suscripción permanece dentro del Tenant ERP autenticado.
+- El portal público del cliente se posterga hasta validar su necesidad durante beta.
+
 ## Tenant ERP
 
-Navegacion principal:
+Navegación principal vigente:
 
-- Dashboard
-- Ventas
-  - POS
-  - Tickets
-  - Pagos
-  - Devoluciones
-- Productos
-  - Listado
-  - Crear producto
-  - Categorias
-  - Marcas
-  - Variantes
-  - Importar
-  - Exportar
-- Inventario
-  - Stock
-  - Kardex
-  - Ajustes
-  - Conteos
-  - Alertas
-- Warehouse
-  - Bodegas
-  - Ubicaciones
-  - Transferencias
-  - Picking
-  - Packing
-  - Recepcion
-  - Lotes
-- Compras
-  - Ordenes
-  - Recepcion
-  - Proveedores
-- Clientes
-- Reportes
-- Configuracion
-  - Empresa
-  - Sucursales
-  - Bodegas
-  - Cajas
-  - Usuarios
-  - Roles
-  - Permisos
-  - DTE
-  - Integraciones
+### Dashboard
 
-### Fase 1 - Navegacion unificada implementada
+- Dashboard financiero para usuarios con `reports.view`.
+- Dashboard operativo para usuarios sin acceso a información financiera global.
 
-La Fase 1 reorganiza los modulos existentes en una barra lateral persistente bajo `/app/*` sin cambiar reglas de negocio ni contratos de API.
+### Ventas y caja
 
-Mapa implementado:
+- Punto de venta.
+- Cajas y sesiones.
+- Historial de ventas.
+- Devoluciones.
+- DTE Chile.
+- Clientes.
 
-- Inicio: Dashboard.
-- Ventas y caja: Punto de venta, Cajas y sesiones, Historial de ventas, Historial de devoluciones, DTE Chile, Clientes.
-- Catalogo: Productos, Catalogo web e integraciones.
-- Inventario y logistica: Existencias y bodegas, Inventario avanzado, Picking y packing.
-- Compras: Ordenes y proveedores.
-- Reportes y control: Control y reportes, Diagnostico operativo.
-- Administracion: Administracion, Plan y facturacion.
+### Catálogo
 
-Detalle tecnico y criterios: `05-Development/PHASE-1-UNIFIED-NAVIGATION.md`.
+- Productos.
+- Categorías, marcas, precios e importación consolidados dentro de Productos.
+- Variantes y lotes.
+- Catálogo web e integraciones.
 
-### Fase 2 - Agrupacion funcional implementada
+### Inventario y logística
 
-La Fase 2 mantiene la navegacion unificada de Fase 1 y reordena las rutas visibles por funcion real del negocio, sin nuevos endpoints ni cambios de reglas.
+- Existencias.
+- Kardex y trazabilidad.
+- Ubicaciones.
+- Transferencias.
+- Conteos físicos.
+- Picking y packing.
 
-Mapa implementado:
+### Compras
 
-- Inicio: Dashboard.
-- Ventas y caja: Punto de venta, Cajas y sesiones, Historial de ventas, Devoluciones, DTE Chile, Clientes.
-- Catalogo: Productos, Categorias, Marcas, Variantes, Precios y margenes, Importar, Catalogo web e integraciones.
-- Inventario y logistica: Existencias, Kardex y trazabilidad, Ubicaciones, Transferencias, Conteos, Picking y packing.
-- Compras: Ordenes y proveedores.
-- Reportes: Reportes, Preparacion de la empresa.
-- Administracion: Empresa y usuarios, Plan, facturacion y soporte.
+- Órdenes, proveedores y recepciones.
 
-Redirects legacy obligatorios:
+### Reportes
 
-- `/app/commerce` -> `/app/catalog/integrations`
-- `/app/refunds` -> `/app/sales/refunds`
-- `/app/inventory-control` -> `/app/inventory/kardex`
-- `/app/management` -> `/app/reports`
-- `/app/operations` -> `/app/reports/operations`
-- `/app/billing` -> `/app/admin/billing`
+- Reportes.
+- Preparación de la empresa / diagnóstico operativo.
 
-Detalle tecnico y criterios: `05-Development/PHASE-2-FUNCTIONAL-GROUPING.md`.
+### Administración
 
-### Fase 3 - Asignaciones operativas implementadas
+- Empresa y usuarios.
+- Roles y permisos.
+- Invitaciones.
+- Asignaciones usuario-sucursal-caja.
+- Plan, facturación y soporte.
 
-La Fase 3 mantiene la navegacion de Fase 2. La administracion de sucursal/caja por usuario vive dentro de `Administracion > Empresa y usuarios`, en la seccion Usuarios.
+## Rutas vigentes del Tenant ERP
 
-No se agrega una ruta principal nueva; se amplia la pantalla existente para evitar duplicar gestion de usuarios.
+- `/app` — Dashboard.
+- `/app/catalog` — Productos y gestión consolidada de catálogo.
+- `/app/catalog/variants` — Variantes y lotes.
+- `/app/catalog/integrations` — Catálogo web e integraciones.
+- `/app/purchases` — Compras y proveedores.
+- `/app/inventory` — Existencias.
+- `/app/inventory/kardex` — Kardex y trazabilidad.
+- `/app/inventory/locations` — Ubicaciones.
+- `/app/inventory/transfers` — Transferencias.
+- `/app/inventory/counts` — Conteos físicos.
+- `/app/picking-packing` — Picking y packing.
+- `/app/pos` — Acceso POS dentro del shell.
+- `/pos` — POS standalone.
+- `/app/cash` — Cajas y sesiones.
+- `/app/sales` — Historial de ventas.
+- `/app/sales/refunds` — Devoluciones.
+- `/app/dte` — DTE Chile.
+- `/app/customers` — Clientes.
+- `/app/reports` — Reportes.
+- `/app/reports/operations` — Preparación operativa.
+- `/app/admin` — Empresa, usuarios, roles y permisos.
+- `/app/admin/billing` — Plan, facturación y soporte.
 
-Detalle tecnico y criterios: `05-Development/PHASE-3-USER-CASH-ASSIGNMENTS.md`.
+## Redirects legacy obligatorios
+
+- `/app/commerce` → `/app/catalog/integrations`.
+- `/app/refunds` → `/app/sales/refunds`.
+- `/app/inventory-control` → `/app/inventory/kardex`.
+- `/app/management` → `/app/reports`.
+- `/app/operations` → `/app/reports/operations`.
+- `/app/billing` → `/app/admin/billing`.
+- `/app/catalog/products` → `/app/catalog`.
+- `/app/catalog/categories` → `/app/catalog`.
+- `/app/catalog/brands` → `/app/catalog`.
+- `/app/catalog/pricing` → `/app/catalog`.
+- `/app/catalog/import` → `/app/catalog`.
+
+## Evolución implementada
+
+### Fase 1 — Navegación unificada
+
+- Shell persistente bajo `/app/*`.
+- Sidebar de escritorio.
+- Drawer móvil.
+- Selector de empresa.
+- POS independiente.
+
+### Fase 2 — Agrupación funcional
+
+- Reorganización por función del negocio.
+- Consolidación de rutas.
+- Redirects legacy.
+
+### Fase 3 — Asignaciones operativas
+
+- Asignación de usuario a sucursal y caja dentro de Administración.
+- No se crea una ruta principal duplicada.
+
+### Fase 4 — Permisos y navegación dinámica
+
+- Navegación filtrada por permisos efectivos.
+- Protección de rutas profundas y acciones.
+- Grupos vacíos ocultos.
+- Soporte multi-rol.
+
+### Fase 5 — Cierre operativo
+
+- Dashboard adaptado por permisos.
+- Diagnóstico operativo.
+- Arqueo ciego.
+- Cierre funcional V1.
+
+### Fase 6 — Consolidación de plataforma
+
+- Comparativa pública en `/compare`.
+- Ficha integral desde `SuperAdmin > Empresas > Ver detalle`.
+- Configuración global dentro de SuperAdmin.
+- Actualización documental del estado real del producto.
+
+Detalle: `05-Development/PHASE-6-PLATFORM-CONSOLIDATION.md`.
 
 ## SuperAdmin Console
 
-Navegacion principal:
+Navegación principal vigente:
 
-- Dashboard
-- Empresas
-- Planes
-- Billing
-- Customer Success
-- Tickets de soporte
-- Landing CMS
-- Infraestructura
-- Integraciones
-- Feature Flags
-- Analytics
-- Configuracion Global
+- Dashboard global.
+- Empresas.
+  - Listado.
+  - Detalle de empresa.
+- Suscripciones.
+- Customer Success.
+- Tickets de soporte.
+- Landing CMS.
+- Feature Flags.
+- Infraestructura.
+- Configuración global.
 
-## Regla para Codex
+Ruta adicional:
 
-Toda pantalla nueva debe declarar su mundo, modulo, ruta y permisos antes de implementarse.
+- `/superadmin/operations` — operación interna, almacenamiento, actividad y errores críticos.
+
+## Regla de implementación
+
+Toda pantalla nueva debe declarar:
+
+- mundo;
+- módulo;
+- ruta o ubicación;
+- permisos o alcance de plataforma;
+- relación con pantallas consolidadas;
+- dependencia externa, cuando exista.
