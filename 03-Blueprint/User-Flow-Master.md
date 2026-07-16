@@ -1,10 +1,29 @@
 # User Flow Master
 
-Version: 0.1
+Version: 0.2
 Estado: Aprobado
 
 ## Objetivo
 Definir los recorridos principales de Tarevo desde la perspectiva del usuario y del negocio.
+
+## Regla transversal de acceso
+
+Tarevo no debe decidir la experiencia por el nombre del rol. Después del login:
+
+```text
+Login
+  -> Obtener permisos efectivos
+  -> Aplicar empresa, sucursal, bodega y caja asignadas
+  -> Resolver pantalla inicial
+  -> Construir menú y dashboard según permisos
+```
+
+Roles protegidos del sistema:
+
+- Propietario.
+- Administrador.
+
+Todos los demás roles son personalizados por empresa. Sus nombres son libres y su comportamiento depende de permisos, asignaciones y pantalla inicial.
 
 ## Flow 01 — Del visitante a la primera venta
 
@@ -24,18 +43,25 @@ Landing
 
 Evento final esperado: FirstSaleCompleted.
 
-## Flow 02 — Cliente existente hace una venta
+## Flow 02 — Usuario existente entra al sistema
 
 ```text
 Login
-  -> Dashboard
-  -> Abrir caja si esta cerrada
-  -> POS
-  -> Agregar producto
-  -> Cobrar
-  -> Generar ticket/venta
-  -> Cerrar flujo
+  -> Resolver tenant activo
+  -> Cargar permisos efectivos
+  -> Cargar asignaciones operativas
+  -> Si tiene una sola area operativa: abrir esa area
+  -> Si tiene varias areas: abrir dashboard personalizado
+  -> Si no tiene permisos: mostrar Sin acceso asignado
 ```
+
+Ejemplos:
+
+- Solo POS: abrir POS.
+- POS + caja: abrir POS y permitir operacion de caja.
+- Inventario + ubicaciones: abrir Inventario.
+- Picking + packing: abrir Picking y packing.
+- Varias areas: abrir Dashboard personalizado.
 
 ## Flow 03 — Administrador gestiona productos
 
@@ -48,41 +74,70 @@ Login
   -> Auditoria
 ```
 
-## Flow 04 — Bodeguero prepara picking
+## Flow 04 — Rol personalizado de bodega prepara picking
 
 ```text
 Login
-  -> Warehouse
-  -> Picking
+  -> Resolver permisos de warehouse
+  -> Picking y packing
   -> Ver lista
   -> Confirmar ubicacion
   -> Preparar productos
   -> Marcar listo
 ```
 
-## Flow 05 — Cajero opera caja
+El rol puede tener cualquier nombre. El acceso depende de permisos de warehouse y picking.
+
+## Flow 05 — Rol personalizado opera caja
 
 ```text
 Login
-  -> Caja
-  -> Abrir caja
-  -> POS
+  -> Resolver permisos POS y caja
+  -> Abrir POS como pantalla inicial
+  -> Abrir caja si corresponde
   -> Cobrar ventas
   -> Cerrar caja
   -> Arqueo
 ```
 
-## Flow 06 — Supervisor revisa reportes
+El rol puede llamarse Cajero, Operador POS, Vendedor de caja u otro nombre.
+
+## Flow 06 — Rol personalizado revisa reportes
 
 ```text
 Login
+  -> Resolver permiso de reportes
   -> Reportes
   -> Seleccionar reporte
   -> Filtrar fecha / sucursal / caja
   -> Exportar si tiene permiso
 ```
 
-## Flow 07 — SuperAdmin revisa una empresa
+## Flow 07 — Administrador crea un rol personalizado
+
+```text
+Administracion
+  -> Usuarios y roles
+  -> Crear rol personalizado
+  -> Elegir plantilla o comenzar vacio
+  -> Asignar permisos por modulo
+  -> Definir pantalla inicial: automatica o manual
+  -> Guardar
+  -> Asignar rol a usuario
+```
+
+Plantillas sugeridas:
+
+- Cajero.
+- Vendedor.
+- Bodega.
+- Supervisor.
+- Compras.
+- Contabilidad.
+
+Las plantillas no son roles obligatorios: solo preseleccionan permisos editables.
+
+## Flow 08 — SuperAdmin revisa una empresa
 
 ```text
 SuperAdmin Login
@@ -92,7 +147,7 @@ SuperAdmin Login
   -> Plan / pagos / almacenamiento / DTE / soporte
 ```
 
-## Flow 08 — Soporte resuelve ticket
+## Flow 09 — Soporte resuelve ticket
 
 ```text
 SuperAdmin
@@ -117,10 +172,12 @@ SuperAdmin
 ### Primera semana
 - Importa productos.
 - Invita usuarios.
+- Crea roles personalizados.
 - Configura bodegas.
 - Revisa primeros reportes.
 
 ### Primer mes
+- Ajusta permisos y pantallas iniciales.
 - Usa reportes.
 - Evalua Warehouse.
 - Configura dominio propio si su plan lo permite.
