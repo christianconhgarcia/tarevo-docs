@@ -28,6 +28,29 @@ Incluye:
 - Seguridad.
 - Infraestructura Docker/Coolify.
 
+### Impresion POS - trabajo aprobado
+
+Estado actual:
+
+- impresion silenciosa Windows con QZ validada en produccion;
+- configuracion local de impresoras por computador/tenant;
+- impresion de prueba desde POS;
+- autoimpresion best-effort despues de venta confirmada.
+
+Siguientes entregas:
+
+1. pulir renderer de ticket, margenes configurables, vista previa y reimpresion;
+2. `Tarevo Print Connector` autoservicio para Windows `.exe`;
+3. `Tarevo Print Connector` para macOS `.pkg` usando la misma arquitectura QZ;
+4. ESC/POS para tickets/cajon y ZPL/TSPL para etiquetas donde corresponda;
+5. Tarevo POS App para Android con WebView + bridge nativo y adaptadores por fabricante.
+
+Fuente de verdad:
+
+```text
+03-Architecture/POS-Printing-Architecture.md
+```
+
 ## V2 - Canales y automatizacion
 
 - Catalogo web avanzado.
