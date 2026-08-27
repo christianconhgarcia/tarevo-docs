@@ -1,6 +1,6 @@
 # Atlas Decision Log (ADL)
 
-Este documento registra decisiones aprobadas durante Sprint 0.
+Este documento registra decisiones aprobadas durante Sprint 0 y decisiones posteriores que afectan la arquitectura oficial de Tarevo.
 
 ## ADL-000 - Nombre comercial
 
@@ -53,7 +53,7 @@ Atlas podra vender almacenamiento incluido y adicional por empresa.
 
 ## ADL-012 - Secretos fuera del codigo
 
-Ninguna clave o certificado se guarda en codigo, frontend, GitHub o chat.
+Ninguna clave o certificado privado se guarda en codigo, frontend, GitHub o chat.
 
 ## ADL-013 - Seguridad por diseno
 
@@ -114,3 +114,51 @@ La V1 incluira Core, POS, Inventory, Warehouse inicial, DTE Chile, CRM basico, r
 ## ADL-027 - Primero arquitectura, despues programacion
 
 No se desarrolla una funcionalidad sin documento o decision relacionada.
+
+## ADL-028 - Impresion POS multiplataforma por adaptadores
+
+Tarevo POS tendra una abstraccion comun de impresion y adaptadores por plataforma. Windows y macOS usaran QZ Tray mediante Tarevo Print Connector. Android usara una app Tarevo POS con bridge nativo y SDK/servicio de impresora del fabricante cuando corresponda.
+
+La logica de venta no debe acoplarse a QZ, Sunmi, iMin, PAX ni otra marca especifica.
+
+## ADL-029 - QZ con firma backend
+
+Las solicitudes QZ se firman en backend con SHA512. El frontend recibe el certificado publico y la firma necesaria, pero nunca la clave privada.
+
+La clave privada permanece fuera del codigo y se configura en runtime mediante `QZ_PRIVATE_KEY_B64`.
+
+## ADL-030 - Preferencias de impresion son locales por computador
+
+La impresora de tickets, etiquetas, A4, papel y ajustes de impresion se guardan por computador/navegador y tenant. No son configuracion global de la empresa porque cada estacion puede tener hardware diferente.
+
+## ADL-031 - Fallo de impresion no invalida venta
+
+La impresion es un efecto posterior a una venta confirmada. Si QZ, la impresora, el bridge Android o cualquier capa local falla, la venta confirmada permanece exitosa.
+
+Regla permanente:
+
+```text
+fallo de impresion != fallo de venta
+```
+
+## ADL-032 - Tarevo Print Connector autoservicio
+
+Tarevo ofrecera un instalador autoservicio desde `Configuracion > Impresion` para preparar equipos Windows y macOS sin intervencion obligatoria de soporte.
+
+Windows tendra instalador `.exe` y macOS `.pkg`. Los instaladores pueden incluir QZ Tray, certificado publico Tarevo, inicio automatico y verificacion, pero nunca secretos de backend.
+
+## ADL-033 - Android conserva el POS web como fuente de verdad
+
+La app Android de Tarevo cargara `pos.gettarevo.com` mediante WebView seguro y usara un bridge nativo solo para capacidades de hardware.
+
+Los cambios normales del POS web no requieren publicar una nueva APK. Solo los cambios de la capa nativa, SDK, bridge o hardware requieren una nueva version Android.
+
+## ADL-034 - Un solo renderer de ticket
+
+Vista previa, impresion Windows/macOS y adaptadores Android deben compartir la misma fuente canonica de contenido del ticket. No se mantendran plantillas divergentes para preview e impresion.
+
+La arquitectura completa esta documentada en:
+
+```text
+03-Architecture/POS-Printing-Architecture.md
+```
