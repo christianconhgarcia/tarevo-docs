@@ -47,6 +47,7 @@ Tarevo debe crecer con disciplina de costos. La arquitectura debe estar preparad
 - `01-Product/Module-Scope-V1.md`
 - `02-Business/PRD-General-Chile.md`
 - `03-Architecture/Architecture-Principles.md`
+- `03-Architecture/POS-Printing-Architecture.md` - arquitectura oficial de impresion POS para Windows, macOS y Android
 - `04-Infrastructure/INF-001-Produccion.md`
 - `05-Database/Conceptual-Data-Model.md`
 - `06-Security/SEC-001-Security-Architecture.md`
@@ -70,6 +71,12 @@ No hardcodees secretos.
 No hagas una version demo.
 Respeta la arquitectura multiempresa y los permisos.
 Documenta cualquier decision tecnica nueva en ADL antes de implementarla.
+```
+
+Para cambios de POS relacionados con impresoras, instaladores, QZ, tickets, margenes, vista previa o Android native bridge, Codex debe leer tambien:
+
+```text
+03-Architecture/POS-Printing-Architecture.md
 ```
 
 ## Principio operativo
