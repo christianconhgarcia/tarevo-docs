@@ -39,6 +39,51 @@ Definir contratos de negocio para APIs de Tarevo. Este documento no es solo una 
 | API-022 | Crear ticket soporte | Public/Tenant | support.create | SupportTicketCreated |
 | API-023 | Consultar asignacion operativa de usuario | Tenant ERP | users.view | none |
 | API-024 | Actualizar asignacion operativa de usuario | Tenant ERP | users.update | UserCashAssignmentsUpdated |
+| API-025 | Obtener certificado publico para QZ | Tenant ERP / POS | sales.pos_access | none |
+| API-026 | Firmar solicitud QZ | Tenant ERP / POS | sales.pos_access | none |
+
+## Contratos de impresion QZ
+
+### API-025 - Obtener certificado publico para QZ
+
+Endpoint actual:
+
+```text
+GET /api/v1/printing/qz/certificate
+```
+
+Reglas:
+
+- requiere autenticacion valida;
+- requiere tenant resuelto;
+- requiere permiso `sales.pos_access`;
+- devuelve solamente certificado publico y algoritmo de firma;
+- nunca devuelve material de clave privada.
+
+### API-026 - Firmar solicitud QZ
+
+Endpoint actual:
+
+```text
+POST /api/v1/printing/qz/sign
+```
+
+Reglas:
+
+- requiere autenticacion valida;
+- requiere tenant resuelto;
+- requiere permiso `sales.pos_access`;
+- firma exclusivamente payloads QZ permitidos por el servicio;
+- algoritmo actual: SHA512;
+- la clave privada permanece en backend;
+- no se debe registrar la clave ni exponerla en respuestas;
+- los errores de firma no pueden alterar una venta ya confirmada.
+
+La arquitectura completa esta documentada en:
+
+```text
+03-Architecture/POS-Printing-Architecture.md
+```
 
 ## Formato de contrato
 

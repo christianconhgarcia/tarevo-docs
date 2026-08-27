@@ -67,6 +67,7 @@ Inventariar las pantallas oficiales de Tarevo. Ninguna pantalla puede desarrolla
 | SCR-TE-033 | Tenant ERP | Configuracion | Usuarios | Alta | Si |
 | SCR-TE-034 | Tenant ERP | Configuracion | Roles y permisos | Alta | Si |
 | SCR-TE-035 | Tenant ERP | Configuracion | DTE | Alta | Si |
+| SCR-TE-036 | Tenant ERP / POS | Configuracion | Impresion POS | Alta | Si |
 
 ### Pantallas incorporadas al shell persistente en Fase 1
 
@@ -110,6 +111,18 @@ Estas rutas sustituyen rutas legacy de Fase 1 cuando corresponde. Los IDs de pan
 | Ruta | Mundo | Modulo | Pantalla | Cambio |
 |---|---|---|---|---|
 | `/app/admin` | Tenant ERP | Administracion | Empresa y usuarios | Gestion de asignacion operativa por usuario: sucursal, caja predeterminada y cambio de caja |
+
+### Configuracion de impresion POS
+
+La configuracion de impresion vive dentro del terminal POS independiente, no en las pantallas administrativas legacy.
+
+Ubicacion visible:
+
+```text
+POS -> Configuracion -> Impresion
+```
+
+Incluye configuracion local por computador/tenant para impresora de tickets, etiquetas, A4, papel, autoimpresion y diagnostico de conexion. La evolucion de margenes, vista previa, Tarevo Print Connector y adaptadores Android se rige por `03-Architecture/POS-Printing-Architecture.md`.
 
 ## SuperAdmin Console
 
